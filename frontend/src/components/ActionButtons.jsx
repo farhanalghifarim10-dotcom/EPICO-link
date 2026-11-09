@@ -63,17 +63,43 @@ export default function ActionButtons() {
               className={`
                 group relative w-full min-h-[60px] flex items-center justify-between px-5 py-3.5
                 bg-obsidian-card hover:bg-white text-white hover:text-black
-                border border-white/15 hover:border-white
+                border border-white/15 ${link.id === 'tiktok' ? 'hover:border-transparent hover:shadow-[0_0_16px_rgba(37,244,238,0.2),0_0_16px_rgba(254,44,85,0.2)]' : 'hover:border-white'}
                 rounded-none sm:rounded-sm
                 transition-all duration-200 ease-out
                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black
                 overflow-hidden
               `}
             >
+              {/* TikTok Dual-Color Edge Accents (Cyan #25F4EE & Red #FE2C55) on Hover */}
+              {link.id === 'tiktok' && (
+                <>
+                  {/* Left Edge: TikTok Cyan */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#25F4EE] opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none"
+                  />
+                  {/* Right Edge: TikTok Red / Neon Pink */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute right-0 top-0 bottom-0 w-[4px] bg-[#FE2C55] opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none"
+                  />
+                  {/* Top Edge Gradient: Cyan to Red */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55] opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none"
+                  />
+                  {/* Bottom Edge Gradient: Cyan to Red */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55] opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none"
+                  />
+                </>
+              )}
+
               {/* Forward-leaning subtle diagonal corner accent */}
               <div
                 aria-hidden="true"
-                className="absolute top-0 right-0 w-3 h-3 bg-white/10 group-hover:bg-black/10 transition-colors pointer-events-none clip-angled-br"
+                className={`absolute top-0 right-0 w-3 h-3 ${link.id === 'tiktok' ? 'bg-white/10 group-hover:bg-[#FE2C55]' : 'bg-white/10 group-hover:bg-black/10'} transition-colors pointer-events-none clip-angled-br z-20`}
               />
 
               {/* Left Side: Icon & Title/Subtitle Stack */}
