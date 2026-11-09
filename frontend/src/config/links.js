@@ -22,8 +22,6 @@ export const brandMeta = {
   officialEmail: "epicosportofficial@gmail.com",
   origin: "BANDUNG / EST. 2026",
   discipline: "ATHLETIC APPAREL",
-  origin: "BANDUNG / EST. 2026",
-  discipline: "ATHLETIC APPAREL",
 };
 
 export const actionLinks = [
@@ -32,8 +30,7 @@ export const actionLinks = [
     title: "TIKTOK EPICO",
     subtitle: "OFFICIAL CONTENT & DROPS",
     icon: "tiktok",
-    // Replace with your verified TikTok handle/link
-    url: "https://www.tiktok.com/@epicosportofficial",
+    url: "https://www.tiktok.com/@epico.official?_r=1",
     isExternal: true,
   },
   {
@@ -41,8 +38,7 @@ export const actionLinks = [
     title: "INSTAGRAM EPICO",
     subtitle: "EDITORIAL & COMMUNITY",
     icon: "instagram",
-    // Replace with your official Instagram profile link
-    url: "https://www.instagram.com/epicosportofficial",
+    url: "https://www.instagram.com/epicosportofficial?obrf=bGNsNjZmZ2lzOWl5",
     isExternal: true,
   },
   {
@@ -50,8 +46,7 @@ export const actionLinks = [
     title: "WHATSAPP EPICO",
     subtitle: "DIRECT VIP CONCIERGE & ORDERS",
     icon: "whatsapp",
-    // Replace with your international WhatsApp business link (e.g., https://wa.me/...)
-    url: "https://wa.me/6281234567890",
+    url: "https://wa.me/6282262121094",
     isExternal: true,
   },
   {
