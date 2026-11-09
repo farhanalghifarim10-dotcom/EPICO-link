@@ -5,6 +5,7 @@ import {
   TikTokIcon,
   InstagramIcon,
   WhatsAppIcon,
+  GmailIcon,
   MailIcon,
   DiagonalArrowIcon,
 } from './BrandIcons';
@@ -20,7 +21,7 @@ export default function ActionButtons() {
       case 'whatsapp':
         return <WhatsAppIcon className="w-5 h-5 shrink-0" />;
       case 'mail':
-        return <MailIcon className="w-5 h-5 shrink-0" />;
+        return <GmailIcon className="w-5 h-5 shrink-0" />;
       default:
         return null;
     }
@@ -31,27 +32,39 @@ export default function ActionButtons() {
     switch (id) {
       case 'tiktok':
         return {
-          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_16px_rgba(37,244,238,0.2),0_0_16px_rgba(254,44,85,0.2)]',
-          leftBar: 'bg-[#25F4EE]',
-          rightBar: 'bg-[#FE2C55]',
-          topBottom: 'bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55]',
+          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_18px_rgba(37,244,238,0.25),0_0_18px_rgba(254,44,85,0.25)]',
+          leftBar: 'bg-[#25F4EE]', // TikTok Cyan
+          rightBar: 'bg-[#FE2C55]', // TikTok Red
+          topBar: 'bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55]',
+          bottomBar: 'bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55]',
           corner: 'bg-[#FE2C55]',
         };
       case 'instagram':
         return {
-          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_16px_rgba(225,48,108,0.2),0_0_16px_rgba(247,119,55,0.2)]',
-          leftBar: 'bg-[#E1306C]',
-          rightBar: 'bg-[#F77737]',
-          topBottom: 'bg-gradient-to-r from-[#E1306C] via-white to-[#F77737]',
+          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_18px_rgba(225,48,108,0.25),0_0_18px_rgba(252,176,69,0.25)]',
+          leftBar: 'bg-gradient-to-b from-[#833AB4] via-[#E1306C] to-[#FD1D1D]', // Purple to Magenta
+          rightBar: 'bg-gradient-to-b from-[#FD1D1D] via-[#F77737] to-[#FCAF45]', // Orange to Gold
+          topBar: 'bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45]',
+          bottomBar: 'bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45]',
           corner: 'bg-[#E1306C]',
         };
       case 'whatsapp':
         return {
-          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_16px_rgba(37,211,102,0.25)]',
-          leftBar: 'bg-[#25D366]',
-          rightBar: 'bg-[#25D366]',
-          topBottom: 'bg-gradient-to-r from-[#25D366] via-white to-[#25D366]',
+          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_18px_rgba(37,211,102,0.3)]',
+          leftBar: 'bg-[#25D366]', // WhatsApp Emerald Green
+          rightBar: 'bg-[#128C7E]', // WhatsApp Deep Teal
+          topBar: 'bg-gradient-to-r from-[#25D366] via-white to-[#128C7E]',
+          bottomBar: 'bg-gradient-to-r from-[#25D366] via-white to-[#128C7E]',
           corner: 'bg-[#25D366]',
+        };
+      case 'email':
+        return {
+          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_18px_rgba(66,133,244,0.25),0_0_18px_rgba(234,67,53,0.25)]',
+          leftBar: 'bg-[#4285F4]', // Google Blue
+          rightBar: 'bg-[#34A853]', // Google Green
+          topBar: 'bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC05]', // Blue -> Red -> Yellow
+          bottomBar: 'bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#34A853]', // Blue -> Red -> Green
+          corner: 'bg-[#EA4335]', // Google Red
         };
       default:
         return null;
@@ -120,12 +133,12 @@ export default function ActionButtons() {
                     {/* Top Edge Gradient */}
                     <div
                       aria-hidden="true"
-                      className={`absolute top-0 left-0 right-0 h-[2px] ${accent.topBottom} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none`}
+                      className={`absolute top-0 left-0 right-0 h-[2px] ${accent.topBar} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none`}
                     />
                     {/* Bottom Edge Gradient */}
                     <div
                       aria-hidden="true"
-                      className={`absolute bottom-0 left-0 right-0 h-[2px] ${accent.topBottom} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none`}
+                      className={`absolute bottom-0 left-0 right-0 h-[2px] ${accent.bottomBar} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none`}
                     />
                   </>
                 )}

@@ -56,6 +56,24 @@ export function WhatsAppIcon({ className = "w-5 h-5", ...props }) {
   );
 }
 
+export function GmailIcon({ className = "w-5 h-5", ...props }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      {...props}
+    >
+      <path fill="#4285F4" d="M2.5 19.5h3.8V9.2L2.5 6.4z" />
+      <path fill="#34A853" d="M17.7 19.5h3.8V6.4l-3.8 2.8z" />
+      <path fill="#EA4335" d="M17.7 6.4l-5.7 4.3-5.7-4.3V4.5c0-1.4 1.5-2.2 2.6-1.4l3.1 2.3 3.1-2.3c1.1-.8 2.6 0 2.6 1.4v1.9z" />
+      <path fill="#FBBC05" d="M17.7 6.4V4.5c0-.6-.3-1.1-.7-1.4l-3.2 2.4 3.9 2.9z" />
+      <path fill="#C5221F" d="M6.3 6.4l5.7 4.3 5.7-4.3v-.1l-5.7 4.2-5.7-4.2z" opacity=".2" />
+    </svg>
+  );
+}
+
 export function MailIcon({ className = "w-5 h-5", ...props }) {
   return (
     <svg
