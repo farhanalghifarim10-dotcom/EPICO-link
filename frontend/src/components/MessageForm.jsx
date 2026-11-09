@@ -66,15 +66,12 @@ export default function MessageForm() {
       <div className="relative border border-white/15 bg-obsidian-card p-5 sm:p-6 rounded-none sm:rounded-sm">
         {/* Section Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
-          <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 bg-white block" />
-            <h2
-              id="message-section-title"
-              className="font-athletic text-lg sm:text-xl font-bold tracking-wider uppercase text-white"
-            >
-              DROP A MESSAGE
-            </h2>
-          </div>
+          <h2
+            id="message-section-title"
+            className="font-athletic text-lg sm:text-xl font-bold tracking-wider uppercase text-white"
+          >
+            DROP A MESSAGE
+          </h2>
           <span className="text-[10px] font-mono tracking-widest uppercase text-ash-muted">
             DIRECT INQUIRY
           </span>
@@ -147,9 +144,8 @@ export default function MessageForm() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="E.G. ALEX RIVERA"
                   disabled={status === 'loading'}
-                  className="w-full bg-black border border-white/20 focus:border-white text-white px-3.5 py-2.5 text-sm font-sans placeholder:text-ash-subtle rounded-none transition-colors outline-none focus-visible:ring-1 focus-visible:ring-white"
+                  className="w-full bg-black border border-white/20 focus:border-white text-white px-3.5 py-2.5 text-sm font-sans rounded-none transition-colors outline-none focus-visible:ring-1 focus-visible:ring-white"
                 />
               </div>
 
@@ -168,9 +164,8 @@ export default function MessageForm() {
                   required
                   value={formData.contact}
                   onChange={handleChange}
-                  placeholder="E.G. @alex or alex@email.com"
                   disabled={status === 'loading'}
-                  className="w-full bg-black border border-white/20 focus:border-white text-white px-3.5 py-2.5 text-sm font-sans placeholder:text-ash-subtle rounded-none transition-colors outline-none focus-visible:ring-1 focus-visible:ring-white"
+                  className="w-full bg-black border border-white/20 focus:border-white text-white px-3.5 py-2.5 text-sm font-sans rounded-none transition-colors outline-none focus-visible:ring-1 focus-visible:ring-white"
                 />
               </div>
 
@@ -189,9 +184,8 @@ export default function MessageForm() {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Drop a note, collaboration proposal, or apparel inquiry..."
                   disabled={status === 'loading'}
-                  className="w-full bg-black border border-white/20 focus:border-white text-white px-3.5 py-2.5 text-sm font-sans placeholder:text-ash-subtle rounded-none transition-colors outline-none focus-visible:ring-1 focus-visible:ring-white resize-none"
+                  className="w-full bg-black border border-white/20 focus:border-white text-white px-3.5 py-2.5 text-sm font-sans rounded-none transition-colors outline-none focus-visible:ring-1 focus-visible:ring-white resize-none"
                 />
               </div>
 
