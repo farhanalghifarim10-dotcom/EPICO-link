@@ -11,17 +11,18 @@ import {
 } from './BrandIcons';
 
 export default function ActionButtons() {
-  // Map icon identifiers to their bespoke SVG components
-  const getIcon = (iconName) => {
+  // Map icon identifiers to their official uploaded logo images
+  const getIconImage = (iconName) => {
     switch (iconName) {
       case 'tiktok':
-        return <TikTokIcon className="w-5 h-5 shrink-0" />;
+        return '/assets/icon-tiktok.png';
       case 'instagram':
-        return <InstagramIcon className="w-5 h-5 shrink-0" />;
+        return '/assets/icon-instagram.png';
       case 'whatsapp':
-        return <WhatsAppIcon className="w-5 h-5 shrink-0" />;
+        return '/assets/icon-whatsapp.png';
       case 'mail':
-        return <GmailIcon className="w-5 h-5 shrink-0" />;
+      case 'gmail':
+        return '/assets/icon-gmail.png';
       default:
         return null;
     }
@@ -149,10 +150,17 @@ export default function ActionButtons() {
                   className={`absolute top-0 right-0 w-3 h-3 ${accent ? `bg-white/10 group-hover:${accent.corner}` : 'bg-white/10 group-hover:bg-black/10'} transition-colors pointer-events-none clip-angled-br z-20`}
                 />
 
-              {/* Left Side: Icon & Title/Subtitle Stack */}
-              <div className="flex items-center space-x-4 min-w-0">
-                <div className="p-2 border border-white/20 group-hover:border-black/30 group-hover:bg-black group-hover:text-white transition-all duration-200">
-                  {getIcon(link.icon)}
+              {/* Left Side: Official Brand Icon & Title/Subtitle Stack */}
+              <div className="flex items-center space-x-3.5 sm:space-x-4 min-w-0">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center shrink-0 p-1.5 border border-white/20 group-hover:border-black/20 bg-white/5 group-hover:bg-black/5 transition-all duration-200">
+                  <img
+                    src={getIconImage(link.icon)}
+                    alt=""
+                    width="512"
+                    height="512"
+                    className="w-full h-full object-contain filter drop-shadow-sm group-hover:scale-110 transition-transform duration-200 select-none"
+                    loading="lazy"
+                  />
                 </div>
 
                 <div className="flex flex-col text-left truncate">
