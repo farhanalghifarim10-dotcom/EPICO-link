@@ -36,9 +36,9 @@ export default function ActionButtons() {
           hoverBorder: 'hover:border-transparent hover:shadow-[0_0_18px_rgba(37,244,238,0.25),0_0_18px_rgba(254,44,85,0.25)]',
           leftBar: 'bg-[#25F4EE]', // TikTok Cyan
           rightBar: 'bg-[#FE2C55]', // TikTok Red
-          topBar: 'bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55]',
-          bottomBar: 'bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55]',
-          corner: 'bg-[#FE2C55]',
+          topBar: 'bg-gradient-to-r from-[#25F4EE] to-[#FE2C55]',
+          bottomBar: 'bg-gradient-to-r from-[#25F4EE] to-[#FE2C55]',
+          cornerBg: 'bg-[#FE2C55]',
         };
       case 'instagram':
         return {
@@ -47,16 +47,16 @@ export default function ActionButtons() {
           rightBar: 'bg-gradient-to-b from-[#FD1D1D] via-[#F77737] to-[#FCAF45]', // Orange to Gold
           topBar: 'bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45]',
           bottomBar: 'bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45]',
-          corner: 'bg-[#E1306C]',
+          cornerBg: 'bg-[#E1306C]',
         };
       case 'whatsapp':
         return {
           hoverBorder: 'hover:border-transparent hover:shadow-[0_0_18px_rgba(37,211,102,0.3)]',
           leftBar: 'bg-[#25D366]', // WhatsApp Emerald Green
-          rightBar: 'bg-[#128C7E]', // WhatsApp Deep Teal
-          topBar: 'bg-gradient-to-r from-[#25D366] via-white to-[#128C7E]',
-          bottomBar: 'bg-gradient-to-r from-[#25D366] via-white to-[#128C7E]',
-          corner: 'bg-[#25D366]',
+          rightBar: 'bg-[#25D366]', // WhatsApp Emerald Green
+          topBar: 'bg-[#25D366]',
+          bottomBar: 'bg-[#25D366]',
+          cornerBg: 'bg-[#25D366]',
         };
       case 'email':
         return {
@@ -65,7 +65,7 @@ export default function ActionButtons() {
           rightBar: 'bg-[#34A853]', // Google Green
           topBar: 'bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#FBBC05]', // Blue -> Red -> Yellow
           bottomBar: 'bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#34A853]', // Blue -> Red -> Green
-          corner: 'bg-[#EA4335]', // Google Red
+          cornerBg: 'bg-[#EA4335]', // Google Red
         };
       default:
         return null;
@@ -147,8 +147,15 @@ export default function ActionButtons() {
                 {/* Forward-leaning subtle diagonal corner accent */}
                 <div
                   aria-hidden="true"
-                  className={`absolute top-0 right-0 w-3 h-3 ${accent ? `bg-white/10 group-hover:${accent.corner}` : 'bg-white/10 group-hover:bg-black/10'} transition-colors pointer-events-none clip-angled-br z-20`}
-                />
+                  className="absolute top-0 right-0 w-3.5 h-3.5 pointer-events-none clip-angled-br z-20 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-white/10 group-hover:opacity-0 transition-opacity duration-200" />
+                  {accent && (
+                    <div
+                      className={`absolute inset-0 ${accent.cornerBg} opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
+                    />
+                  )}
+                </div>
 
               {/* Left Side: Official Brand Icon & Title/Subtitle Stack */}
               <div className="flex items-center space-x-3.5 sm:space-x-4 min-w-0">

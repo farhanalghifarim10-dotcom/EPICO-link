@@ -30,10 +30,7 @@ export default function App() {
           >
             <div className="space-y-6">
               <div className="border-l-2 border-white pl-4">
-                <span className="font-mono text-[10px] tracking-widest text-ash-muted uppercase block">
-                  BRAND INDEX / REF: EP-01
-                </span>
-                <h2 className="font-athletic text-2xl font-black tracking-wider uppercase text-white mt-1">
+                <h2 className="font-athletic text-2xl font-black tracking-wider uppercase text-white">
                   EPICO PERFORMANCE
                 </h2>
               </div>
