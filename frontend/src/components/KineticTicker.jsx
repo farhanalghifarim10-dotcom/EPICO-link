@@ -5,7 +5,7 @@ export default function KineticTicker() {
     "EPICO",
     "MAKE IT EPIC",
     "PERFORMANCE APPAREL",
-    "PREMIUM SPORTSWEAR",
+    "ORIGINAL APPAREL",
     "EST. OFFICIAL",
     "VELOCITY & CRAFT",
   ];

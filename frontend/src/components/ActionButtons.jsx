@@ -26,6 +26,38 @@ export default function ActionButtons() {
     }
   };
 
+  // Bespoke brand color accents when hovered
+  const getBrandAccent = (id) => {
+    switch (id) {
+      case 'tiktok':
+        return {
+          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_16px_rgba(37,244,238,0.2),0_0_16px_rgba(254,44,85,0.2)]',
+          leftBar: 'bg-[#25F4EE]',
+          rightBar: 'bg-[#FE2C55]',
+          topBottom: 'bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55]',
+          corner: 'bg-[#FE2C55]',
+        };
+      case 'instagram':
+        return {
+          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_16px_rgba(225,48,108,0.2),0_0_16px_rgba(247,119,55,0.2)]',
+          leftBar: 'bg-[#E1306C]',
+          rightBar: 'bg-[#F77737]',
+          topBottom: 'bg-gradient-to-r from-[#E1306C] via-white to-[#F77737]',
+          corner: 'bg-[#E1306C]',
+        };
+      case 'whatsapp':
+        return {
+          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_16px_rgba(37,211,102,0.25)]',
+          leftBar: 'bg-[#25D366]',
+          rightBar: 'bg-[#25D366]',
+          topBottom: 'bg-gradient-to-r from-[#25D366] via-white to-[#25D366]',
+          corner: 'bg-[#25D366]',
+        };
+      default:
+        return null;
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -53,54 +85,56 @@ export default function ActionButtons() {
         animate="show"
         className="flex flex-col space-y-3"
       >
-        {actionLinks.map((link) => (
-          <motion.div key={link.id} variants={buttonVariants}>
-            <a
-              href={link.url}
-              target={link.isExternal ? "_blank" : undefined}
-              rel={link.isExternal ? "noopener noreferrer" : undefined}
-              aria-label={`${link.title}: ${link.subtitle || 'Open Link'}`}
-              className={`
-                group relative w-full min-h-[60px] flex items-center justify-between px-5 py-3.5
-                bg-obsidian-card hover:bg-white text-white hover:text-black
-                border border-white/15 ${link.id === 'tiktok' ? 'hover:border-transparent hover:shadow-[0_0_16px_rgba(37,244,238,0.2),0_0_16px_rgba(254,44,85,0.2)]' : 'hover:border-white'}
-                rounded-none sm:rounded-sm
-                transition-all duration-200 ease-out
-                focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black
-                overflow-hidden
-              `}
-            >
-              {/* TikTok Dual-Color Edge Accents (Cyan #25F4EE & Red #FE2C55) on Hover */}
-              {link.id === 'tiktok' && (
-                <>
-                  {/* Left Edge: TikTok Cyan */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#25F4EE] opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none"
-                  />
-                  {/* Right Edge: TikTok Red / Neon Pink */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute right-0 top-0 bottom-0 w-[4px] bg-[#FE2C55] opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none"
-                  />
-                  {/* Top Edge Gradient: Cyan to Red */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55] opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none"
-                  />
-                  {/* Bottom Edge Gradient: Cyan to Red */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#25F4EE] via-white to-[#FE2C55] opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none"
-                  />
-                </>
-              )}
+        {actionLinks.map((link) => {
+          const accent = getBrandAccent(link.id);
+          return (
+            <motion.div key={link.id} variants={buttonVariants}>
+              <a
+                href={link.url}
+                target={link.isExternal ? "_blank" : undefined}
+                rel={link.isExternal ? "noopener noreferrer" : undefined}
+                aria-label={`${link.title}: ${link.subtitle || 'Open Link'}`}
+                className={`
+                  group relative w-full min-h-[60px] flex items-center justify-between px-5 py-3.5
+                  bg-obsidian-card hover:bg-white text-white hover:text-black
+                  border border-white/15 ${accent ? accent.hoverBorder : 'hover:border-white'}
+                  rounded-none sm:rounded-sm
+                  transition-all duration-200 ease-out
+                  focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black
+                  overflow-hidden
+                `}
+              >
+                {/* Brand Dual-Color Edge Accents on Hover */}
+                {accent && (
+                  <>
+                    {/* Left Edge Bar */}
+                    <div
+                      aria-hidden="true"
+                      className={`absolute left-0 top-0 bottom-0 w-[4px] ${accent.leftBar} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none`}
+                    />
+                    {/* Right Edge Bar */}
+                    <div
+                      aria-hidden="true"
+                      className={`absolute right-0 top-0 bottom-0 w-[4px] ${accent.rightBar} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none`}
+                    />
+                    {/* Top Edge Gradient */}
+                    <div
+                      aria-hidden="true"
+                      className={`absolute top-0 left-0 right-0 h-[2px] ${accent.topBottom} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none`}
+                    />
+                    {/* Bottom Edge Gradient */}
+                    <div
+                      aria-hidden="true"
+                      className={`absolute bottom-0 left-0 right-0 h-[2px] ${accent.topBottom} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none`}
+                    />
+                  </>
+                )}
 
-              {/* Forward-leaning subtle diagonal corner accent */}
-              <div
-                aria-hidden="true"
-                className={`absolute top-0 right-0 w-3 h-3 ${link.id === 'tiktok' ? 'bg-white/10 group-hover:bg-[#FE2C55]' : 'bg-white/10 group-hover:bg-black/10'} transition-colors pointer-events-none clip-angled-br z-20`}
-              />
+                {/* Forward-leaning subtle diagonal corner accent */}
+                <div
+                  aria-hidden="true"
+                  className={`absolute top-0 right-0 w-3 h-3 ${accent ? `bg-white/10 group-hover:${accent.corner}` : 'bg-white/10 group-hover:bg-black/10'} transition-colors pointer-events-none clip-angled-br z-20`}
+                />
 
               {/* Left Side: Icon & Title/Subtitle Stack */}
               <div className="flex items-center space-x-4 min-w-0">
@@ -130,7 +164,8 @@ export default function ActionButtons() {
               </div>
             </a>
           </motion.div>
-        ))}
+          );
+        })}
       </motion.div>
     </nav>
   );

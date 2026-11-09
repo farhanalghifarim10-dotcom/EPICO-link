@@ -39,7 +39,7 @@ export default function App() {
               </div>
 
               <p className="text-xs text-ash-muted leading-relaxed uppercase font-sans">
-                High-performance athletic apparel engineered for peak movement, breathable comfort, and relentless drive. Premium sportswear designed to make every moment historic.
+                High-performance athletic apparel engineered for peak movement, breathable comfort, and relentless drive. Premium apparel and jerseys designed to make every moment historic.
               </p>
 
               <div className="space-y-2 pt-4 border-t border-white/10 font-mono text-[11px] text-ash-light">
