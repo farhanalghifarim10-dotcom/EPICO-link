@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     if (!name || !name.trim() || !contact || !contact.trim() || !message || !message.trim()) {
       return res.status(400).json({
         success: false,
-        error: 'ALL FIELDS ARE REQUIRED: NAME, CONTACT, AND MESSAGE.',
+        error: 'MOHON LENGKAPI SEMUA KOLOM: NAMA, KONTAK, DAN PESAN.',
       });
     }
 
@@ -107,13 +107,13 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
-      message: 'MESSAGE SENT. MAKE IT EPIC.',
+      message: 'PESAN TERKIRIM. MAKE IT EPIC.',
     });
   } catch (error) {
     console.error('Email dispatch error:', error);
     return res.status(500).json({
       success: false,
-      error: 'UNABLE TO DISPATCH MESSAGE AT THIS MOMENT. PLEASE TRY AGAIN OR CONTACT US DIRECTLY.',
+      error: 'TIDAK DAPAT MENGIRIM PESAN SAAT INI. SILAKAN COBA LAGI ATAU HUBUNGI KAMI LANGSUNG.',
     });
   }
 }

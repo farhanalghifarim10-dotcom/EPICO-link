@@ -49,14 +49,11 @@ export default function HeaderHero() {
           />
         </motion.div>
 
-        {/* Slogan replacing footwear text */}
-        <motion.div variants={itemVariants} className="mt-3 space-y-1">
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-epic uppercase font-athletic text-white">
-            MAKE IT EPIC
+        {/* Slogan */}
+        <motion.div variants={itemVariants} className="mt-2">
+          <h1 className="text-[11px] sm:text-xs text-ash-muted tracking-wider uppercase font-mono">
+            Make it epic
           </h1>
-          <p className="text-[11px] sm:text-xs text-ash-muted tracking-wider uppercase font-mono">
-            ATHLETIC APPAREL
-          </p>
         </motion.div>
 
         {/* Editorial forward-leaning accent line */}

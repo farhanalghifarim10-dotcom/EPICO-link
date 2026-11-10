@@ -92,7 +92,7 @@ export default function ActionButtons() {
   };
 
   return (
-    <nav aria-label="Official Brand Links" className="w-full max-w-md mx-auto px-4">
+    <nav aria-label="Tautan Resmi Brand" className="w-full max-w-md mx-auto px-4">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -107,7 +107,7 @@ export default function ActionButtons() {
                 href={link.url}
                 target={link.isExternal ? "_blank" : undefined}
                 rel={link.isExternal ? "noopener noreferrer" : undefined}
-                aria-label={`${link.title}: ${link.subtitle || 'Open Link'}`}
+                aria-label={`${link.title}: ${link.subtitle || 'Buka Tautan'}`}
                 className={`
                   group relative w-full min-h-[60px] flex items-center justify-between px-5 py-3.5
                   bg-obsidian-card hover:bg-white text-white hover:text-black

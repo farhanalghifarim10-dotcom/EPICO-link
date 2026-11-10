@@ -25,7 +25,7 @@ export default function MessageForm() {
 
     if (!formData.name.trim() || !formData.contact.trim() || !formData.message.trim()) {
       setStatus('error');
-      setErrorMessage('PLEASE COMPLETE ALL FIELDS BEFORE SUBMITTING.');
+      setErrorMessage('MOHON LENGKAPI SEMUA KOLOM SEBELUM MENGIRIM.');
       return;
     }
 
@@ -44,7 +44,7 @@ export default function MessageForm() {
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(data.error || 'FAILED TO SEND MESSAGE.');
+        throw new Error(data.error || 'GAGAL MENGIRIM PESAN.');
       }
 
       setStatus('success');
@@ -52,7 +52,7 @@ export default function MessageForm() {
     } catch (err) {
       console.error('Submission error:', err);
       setStatus('error');
-      setErrorMessage(err.message || 'UNABLE TO DISPATCH MESSAGE. CHECK CONNECTION.');
+      setErrorMessage(err.message || 'TIDAK DAPAT MENGIRIM PESAN. PERIKSA KONEKSI ANDA.');
     }
   };
 
@@ -70,10 +70,10 @@ export default function MessageForm() {
             id="message-section-title"
             className="font-athletic text-lg sm:text-xl font-bold tracking-wider uppercase text-white"
           >
-            DROP A MESSAGE
+            KIRIM PESAN
           </h2>
           <span className="text-[10px] font-mono tracking-widest uppercase text-ash-muted">
-            DIRECT INQUIRY
+            PERTANYAAN LANGSUNG
           </span>
         </div>
 
@@ -101,13 +101,13 @@ export default function MessageForm() {
 
               <div className="space-y-1">
                 <h3 className="font-athletic text-xl font-bold tracking-widest uppercase text-white">
-                  MESSAGE SENT
+                  PESAN TERKIRIM
                 </h3>
                 <p className="font-athletic text-sm tracking-super-wide uppercase text-ash-light">
-                  MAKE IT EPIC.
+                  Make it epic.
                 </p>
                 <p className="text-xs text-ash-muted max-w-xs pt-1">
-                  Our official team has received your note and will review it promptly.
+                  Tim resmi kami telah menerima pesan Anda dan akan segera merespons.
                 </p>
               </div>
 
@@ -116,7 +116,7 @@ export default function MessageForm() {
                 onClick={handleReset}
                 className="mt-4 px-6 py-2.5 bg-white text-black font-athletic font-bold text-xs uppercase tracking-widest hover:bg-ash-light transition-colors focus-visible:ring-2 focus-visible:ring-white"
               >
-                SEND ANOTHER NOTE
+                KIRIM PESAN LAIN
               </button>
             </motion.div>
           ) : (
@@ -135,7 +135,7 @@ export default function MessageForm() {
                   htmlFor="field-name"
                   className="block text-xs font-mono font-medium tracking-wider uppercase text-ash-light mb-1.5"
                 >
-                  YOUR NAME <span className="text-white">*</span>
+                  NAMA LENGKAP <span className="text-white">*</span>
                 </label>
                 <input
                   id="field-name"
@@ -155,7 +155,7 @@ export default function MessageForm() {
                   htmlFor="field-contact"
                   className="block text-xs font-mono font-medium tracking-wider uppercase text-ash-light mb-1.5"
                 >
-                  CONTACT (EMAIL / PHONE / IG) <span className="text-white">*</span>
+                  KONTAK (EMAIL / NO. WA / IG) <span className="text-white">*</span>
                 </label>
                 <input
                   id="field-contact"
@@ -175,7 +175,7 @@ export default function MessageForm() {
                   htmlFor="field-message"
                   className="block text-xs font-mono font-medium tracking-wider uppercase text-ash-light mb-1.5"
                 >
-                  MESSAGE / INQUIRY <span className="text-white">*</span>
+                  PESAN / PERTANYAAN <span className="text-white">*</span>
                 </label>
                 <textarea
                   id="field-message"
@@ -217,10 +217,10 @@ export default function MessageForm() {
                 {status === 'loading' ? (
                   <span className="flex items-center space-x-2">
                     <span className="w-3.5 h-3.5 border-2 border-black border-t-transparent animate-spin inline-block" />
-                    <span>SENDING...</span>
+                    <span>MENGIRIMKAN...</span>
                   </span>
                 ) : (
-                  <span>SUBMIT INQUIRY</span>
+                  <span>KIRIM PESAN</span>
                 )}
               </button>
             </motion.form>
@@ -230,4 +230,3 @@ export default function MessageForm() {
     </section>
   );
 }
-

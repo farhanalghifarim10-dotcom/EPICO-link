@@ -28,9 +28,9 @@ export default function BrandFooter() {
 
         {/* Legal & Inquiries Notice */}
         <div className="text-[11px] font-mono text-ash-subtle space-y-1">
-          <p>&copy; {currentYear} {brandMeta.legalEntity}. ALL RIGHTS RESERVED.</p>
+          <p>&copy; {currentYear} {brandMeta.legalEntity}. HAK CIPTA DILINDUNGI.</p>
           <p>
-            OFFICIAL CORRESPONDENCE:{' '}
+            KONTAK RESMI:{' '}
             <a
               href={`mailto:${brandMeta.officialEmail}`}
               className="text-ash-light hover:text-white underline underline-offset-2 transition-colors"
@@ -43,4 +43,3 @@ export default function BrandFooter() {
     </footer>
   );
 }
-

@@ -29,27 +29,17 @@ export default function App() {
             className="hidden lg:flex flex-col justify-between w-64 xl:w-72 pt-12 sticky top-12 select-none"
           >
             <div className="space-y-6">
-              <div className="border-l-2 border-white pl-4">
-                <h2 className="font-athletic text-2xl font-black tracking-wider uppercase text-white">
-                  EPICO PERFORMANCE
-                </h2>
-              </div>
-
-              <p className="text-xs text-ash-muted leading-relaxed uppercase font-sans">
-                High-performance athletic apparel engineered for peak movement, breathable comfort, and relentless drive. Premium apparel and jerseys designed to make every moment historic.
-              </p>
-
-              <div className="space-y-2 pt-4 border-t border-white/10 font-mono text-[11px] text-ash-light">
+              <div className="space-y-2 font-mono text-[11px] text-ash-light border-l-2 border-white pl-4">
                 <div className="flex justify-between">
-                  <span className="text-ash-muted">ORIGIN</span>
+                  <span className="text-ash-muted">ASAL</span>
                   <span>{brandMeta.origin}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-ash-muted">DISCIPLINE</span>
+                  <span className="text-ash-muted">KATEGORI</span>
                   <span>{brandMeta.discipline}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-ash-muted">MOTTO</span>
+                  <span className="text-ash-muted">SLOGAN</span>
                   <span className="text-white font-bold">{brandMeta.slogan}</span>
                 </div>
               </div>
@@ -58,10 +48,10 @@ export default function App() {
             <div className="pt-16">
               <div className="p-4 border border-white/10 bg-obsidian-card">
                 <p className="font-athletic text-xs font-bold uppercase tracking-wider text-white">
-                  VERIFIED BIO-LINK
+                  TAUTAN BIO TERVERIFIKASI
                 </p>
                 <p className="text-[10px] font-mono text-ash-muted mt-1 uppercase">
-                  Official digital touchpoint for all social channels and partnerships.
+                  Pusat informasi resmi untuk seluruh saluran media sosial dan kemitraan.
                 </p>
               </div>
             </div>
@@ -90,7 +80,7 @@ export default function App() {
             <div className="space-y-6">
               <div className="border-r-2 border-white pr-4 text-right">
                 <span className="font-mono text-[10px] tracking-widest text-ash-muted uppercase block">
-                  NETWORK STATUS
+                  STATUS LAYANAN
                 </span>
                 <span className="font-athletic text-2xl font-black tracking-wider uppercase text-white mt-1 block">
                   ONLINE &bull; 24/7
@@ -98,15 +88,15 @@ export default function App() {
               </div>
 
               <div className="p-4 border border-white/10 bg-obsidian-card text-right">
-                <p className="font-mono text-[10px] text-ash-muted uppercase">DIRECT DISPATCH</p>
+                <p className="font-mono text-[10px] text-ash-muted uppercase">KONTAK LANGSUNG</p>
                 <p className="font-athletic text-sm font-bold text-white mt-1 uppercase">
-                  INQUIRIES MONITORED HOURLY
+                  PESAN DIPANTAU SETIAP SAAT
                 </p>
                 <a
                   href={`mailto:${brandMeta.officialEmail}`}
                   className="inline-block mt-3 px-3 py-1.5 border border-white/30 text-[10px] font-mono uppercase tracking-wider text-white hover:bg-white hover:text-black transition-colors"
                 >
-                  SEND DIRECT EMAIL
+                  KIRIM EMAIL LANGSUNG
                 </a>
               </div>
             </div>
@@ -116,7 +106,7 @@ export default function App() {
                 EPICO
               </span>
               <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase block">
-                MAKE IT EPIC
+                Make it epic
               </span>
             </div>
           </aside>
@@ -129,4 +119,3 @@ export default function App() {
     </div>
   );
 }
-
