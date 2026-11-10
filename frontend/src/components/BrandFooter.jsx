@@ -10,7 +10,7 @@ export default function BrandFooter() {
         {/* Brand Wing Mark & Title */}
         <div className="flex items-center space-x-2">
           <img
-            src="/favicon.png"
+            src="/assets/logo-icon-transparent.png"
             alt="EPICO Emblem"
             width="20"
             height="20"
