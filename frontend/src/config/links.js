@@ -33,6 +33,14 @@ export const actionLinks = [
     isExternal: true,
   },
   {
+    id: "facebook",
+    title: "FACEBOOK EPICO",
+    subtitle: "KOMUNITAS & PEMBARUAN RESMI",
+    icon: "facebook",
+    url: "https://www.facebook.com/profile.php?id=61596271027547",
+    isExternal: true,
+  },
+  {
     id: "whatsapp",
     title: "WHATSAPP EPICO",
     subtitle: "PESANAN & KONSULTASI LANGSUNG",

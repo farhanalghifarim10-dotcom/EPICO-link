@@ -18,6 +18,8 @@ export default function ActionButtons() {
         return '/assets/icon-tiktok.png';
       case 'instagram':
         return '/assets/icon-instagram.png';
+      case 'facebook':
+        return '/assets/icon-facebook.png';
       case 'whatsapp':
         return '/assets/icon-whatsapp.png';
       case 'mail':
@@ -48,6 +50,15 @@ export default function ActionButtons() {
           topBar: 'bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45]',
           bottomBar: 'bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45]',
           cornerBg: 'bg-[#E1306C]',
+        };
+      case 'facebook':
+        return {
+          hoverBorder: 'hover:border-transparent hover:shadow-[0_0_18px_rgba(8,102,255,0.35)]',
+          leftBar: 'bg-[#0866FF]', // Facebook Electric Blue
+          rightBar: 'bg-[#0866FF]', // Facebook Electric Blue
+          topBar: 'bg-[#0866FF]',
+          bottomBar: 'bg-[#0866FF]',
+          cornerBg: 'bg-[#0866FF]',
         };
       case 'whatsapp':
         return {
