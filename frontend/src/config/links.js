@@ -37,7 +37,7 @@ export const actionLinks = [
     title: "WHATSAPP EPICO",
     subtitle: "PESANAN & KONSULTASI LANGSUNG",
     icon: "whatsapp",
-    url: "https://wa.me/6282262121094",
+    url: "https://wa.me/62882000315804",
     isExternal: true,
   },
   {
